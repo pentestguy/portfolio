@@ -8,7 +8,7 @@ export default function Mobile({isOpen, setIsOpen}) {
             </div>
             <div className="mobile-options">
             <div className="mobile-option">
-                <a href="Blog">
+                <a href="https://pentestguy.com/">
                 <i class="fi fi-rr-edit-alt option-icon"></i>Blog
                 </a>
             </div>

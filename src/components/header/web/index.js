@@ -4,7 +4,7 @@ export default function web() {
     return (
         <div className="web">
             <div className="web-option">
-                <a href="#Blog">
+                <a href="https://pentestguy.com/">
                 <i class="fi fi-rr-edit-alt option-icon"></i>Blog
                 </a>
             </div>
