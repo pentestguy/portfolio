@@ -23,7 +23,7 @@ export default function Mobile({isOpen, setIsOpen}) {
                 </a>
             </div>
             <div className="mobile-option">
-                <a href="#contact">
+                <a href="https://pentestguy.com/contact-us/">
                 <i class="fi fi-rr-user option-icon"></i>Contact
                 </a>
             </div>
