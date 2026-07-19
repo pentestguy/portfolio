@@ -1,5 +1,5 @@
 import React from 'react';
-import SocialContact from '../../common/social-contact';
+
 import "./about.css";
 
 function About() {
@@ -7,18 +7,17 @@ function About() {
             <div className='about'>
             <div className='about-top'>
                 <div className='about-info'>
-                    Hi, I am 
-                    <br /><span className='info-name'><b>Pentest Guy</b></span>
-                   <br /> I love to test Security, InfoSec Speaker, Blogger.
+                   <p className='intro-line animate-step-1'>Hi, I am</p>
+                    <h1 className='info-name animate-step-2'>Pentest Guy</h1>
+                    <p className='info-bio animate-step-3'>
+                        I love to test Security <span className='divider'>|</span> InfoSec Speaker <span className='divider'>|</span> Blogger
+                    </p>
                 </div>
                 <div className='about-photo'>
                     <img 
                     src={require("../../../assets/hacker.png")} 
                     className='picture' alt='hacker' />
                 </div>
-            </div>
-            <div className='about-bottom'>
-                <SocialContact />
             </div>
         </div>
     )

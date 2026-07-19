@@ -1,40 +1,120 @@
-.about{
+.about {
     padding-bottom: 48px;
 }
-.about-top{
+
+.about-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 40px; /* Added subtle spacing so text and photo never collide */
 }
-.picture{
+
+.picture {
     height: 420px;
 }
-.about-info{
-    font-size: 24px;   
-}
-.info-name{
-    color: lawngreen;
-    font-size: 32px;
-}
-#tsparticles{
+
+#tsparticles {
     position: absolute;
 }
 
-@media only screen and (max-width: 720px){
-    .about-top{
+/* --- TEXT & TYPOGRAPHY STYLES --- */
+.about-info {
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Smooth spacing between the text lines */
+}
+
+.intro-line {
+    margin: 0;
+    font-size: 22px;
+    color: #000000; /* Subtle grey to make your name stand out more */
+}
+
+.info-name {
+    margin: 0;
+    color: lawngreen; /* Kept your exact brand color */
+    font-size: 42px; /* Slightly bumped up from 32px for a stronger hero visual */
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 0 0 15px rgba(124, 252, 0, 0.3); /* Soft lawngreen glow */
+}
+
+.info-bio {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #000000;
+}
+
+.divider {
+    color: lawngreen;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+/* --- SMOOTH STAGGERED ANIMATIONS --- */
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-step-1,
+.animate-step-2,
+.animate-step-3 {
+    opacity: 0; /* Keeps text hidden before animation starts */
+    animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Line 1 ("Hi, I am") starts immediately */
+.animate-step-1 {
+    animation-delay: 0.1s;
+}
+
+/* Line 2 ("Pentest Guy") slides in next */
+.animate-step-2 {
+    animation-delay: 0.3s;
+}
+
+/* Line 3 (Security | Speaker | Blogger) slides in last */
+.animate-step-3 {
+    animation-delay: 0.5s;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media only screen and (max-width: 720px) {
+    .about-top {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        text-align: center; /* Centers text nicely on mobile screens */
+        gap: 30px;
     }
-    .picture{
+    
+    .picture {
         height: 280px;
-        
     }
-    .about-info{
+    
+    .about-info {
         font-size: 20px;
-       
+        align-items: center; /* Centers flex items on mobile */
     }
-    .info-name{
-        font-size: 26px;
+    
+    .intro-line {
+        font-size: 18px;
+    }
+    
+    .info-name {
+        font-size: 32px; /* Replaced your mobile 26px with 32px so it still pops on phones */
+    }
+    
+    .info-bio {
+        font-size: 16px;
     }
 }

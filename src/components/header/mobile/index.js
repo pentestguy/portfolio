@@ -13,13 +13,8 @@ export default function Mobile({isOpen, setIsOpen}) {
                 </a>
             </div>
             <div className="mobile-option">
-                <a href="#skills">
-                <i class="fi fi-rr-laptop option-icon"></i>Skills
-                </a>
-            </div>
-            <div className="mobile-option">
-                <a href="#work">
-                <i class="fi fi-rr-briefcase option-icon"></i>Work
+                <a href="#projects">
+                <i class="fi fi-rr-briefcase option-icon"></i>Projects
                 </a>
             </div>
             <div className="mobile-option">

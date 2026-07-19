@@ -1,0 +1,228 @@
+.youtube-section {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 0 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Section Header - Black text to match your light background visibility */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    color: #000000;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.highlight-green {
+    color: #7cfc00;
+}
+
+.title-underline {
+    width: 60px;
+    height: 3px;
+    background-color: #7cfc00;
+    margin: 0 auto 15px auto;
+    box-shadow: 0 0 10px rgba(124, 252, 0, 0.5);
+}
+
+.section-subtitle {
+    color: #000000;
+    font-size: 1rem;
+}
+
+/* Loading & Error States */
+.youtube-status {
+    text-align: center;
+    padding: 40px;
+    color: #000000;
+}
+
+.loading-pulse {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #222;
+    border-top-color: #7cfc00;
+    border-radius: 50%;
+    margin: 0 auto 15px auto;
+    animation: spin 1s linear infinite;
+}
+
+.error-text {
+    color: #ff5555;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Videos Grid */
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+/* Video Cards */
+.video-card {
+    background: rgba(17, 17, 17, 0.85);
+    border: 1px solid #222;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    
+    /* Staggered Slide-Up Animation */
+    opacity: 0;
+    animation: slideUpFade 0.6s ease forwards;
+}
+
+.video-card:hover {
+    transform: translateY(-7px);
+    border-color: #7cfc00;
+    background: rgba(22, 22, 22, 0.95);
+    box-shadow: 0 10px 25px rgba(124, 252, 0, 0.15);
+}
+
+/* Thumbnail & Play Button Overlay */
+.thumbnail-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.video-card:hover .video-thumbnail {
+    transform: scale(1.05);
+}
+
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.play-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(124, 252, 0, 0.9);
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    padding-left: 4px; /* Centers the triangle visually */
+    box-shadow: 0 0 15px rgba(124, 252, 0, 0.6);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease;
+}
+
+.video-card:hover .play-icon {
+    transform: scale(1.15);
+    background: #7cfc00;
+    box-shadow: 0 0 25px rgba(124, 252, 0, 0.9);
+}
+
+/* Video Information Text */
+.video-info {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.video-title {
+    color: #fff;
+    font-size: 1.15rem;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+    transition: color 0.2s ease;
+}
+
+.video-card:hover .video-title {
+    color: #7cfc00;
+}
+
+.video-author {
+    color: #8b949e;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Card Footer */
+.video-footer {
+    padding: 15px 20px;
+    background: #0d1117;
+    border-top: 1px solid #1f242c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #8b949e;
+}
+
+.video-platform {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.youtube-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ff0000;
+    box-shadow: 0 0 6px rgba(255, 0, 0, 0.8);
+}
+
+.watch-link {
+    color: #ccc;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.video-card:hover .watch-link {
+    color: #7cfc00;
+    transform: translateX(3px);
+}
+
+/* Keyframe Animation Matching Existing Sections */
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .videos-grid {
+        grid-template-columns: 1fr;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+}

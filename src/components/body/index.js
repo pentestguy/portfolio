@@ -11,12 +11,6 @@ function Body() {
             <section id="about">
                 <About />
             </section>
-            <section className='skills'>
-                <Skills />
-            </section>
-            <section id="work">
-                <Work />
-            </section>
             <section id="contact">
                 <Contact />
             </section>

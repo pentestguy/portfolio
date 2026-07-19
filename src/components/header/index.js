@@ -6,7 +6,11 @@ function Header() {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <div className="header">
-            <div className="logo">Pentestguy</div>
+        <div 
+        className="logo" 
+        onClick={() => window.location.reload()} 
+        style={{ cursor: 'pointer' }}>
+        Pentestguy</div>
             <div className="menu">
                 <div className="web-menu">
                     <Web />
